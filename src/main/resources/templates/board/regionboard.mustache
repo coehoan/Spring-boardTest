@@ -1,0 +1,30 @@
+{{> /layout/header}}
+
+<h1>지역별 게시판</h1>
+
+<div class="input-group mb-3">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">지역</button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">서울</a></li>
+        <li><a class="dropdown-item" href="#">경기</a></li>
+        <li><a class="dropdown-item" href="#">부산</a></li>
+    </ul>
+    <input class="form-control" type="text" placeholder="제목" aria-label="default input example">
+</div>
+
+<div id="editor"></div>
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<script>
+    const Editor = toastui.Editor;
+    const editor = new Editor({
+        el: document.querySelector('#editor'),
+        height: '500px',
+        initialEditType: 'wysiwyg',
+        previewStyle: 'vertical'
+    });
+    editor.getMarkdown();
+</script>
+</body>
+
+</html>
